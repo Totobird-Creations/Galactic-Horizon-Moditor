@@ -1,0 +1,266 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Font/Regular.tres" type="DynamicFont" id=2]
+[ext_resource path="res://TextArea.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Buttons/Run.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Buttons/Stop.png" type="Texture" id=5]
+[ext_resource path="res://Layout.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Font/Bold.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Effects/Load.gd" type="Script" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="RichTextEffect" id=8]
+script = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Control" parent="Layout"]
+anchor_bottom = 1.0
+margin_right = 200.0
+rect_min_size = Vector2( 200, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Control" parent="Layout"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 212.0
+rect_min_size = Vector2( 350, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Layout/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Control" parent="Layout/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -212.0
+rect_min_size = Vector2( 0, 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextArea" type="TextEdit" parent="Layout/Right/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/member_variable_color = Color( 1, 1, 1, 1 )
+custom_colors/function_color = Color( 0.341176, 0.701961, 1, 1 )
+custom_colors/symbol_color = Color( 1, 1, 1, 1 )
+custom_colors/caret_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/line_number_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+custom_colors/number_color = Color( 0.63, 1, 0.88, 1 )
+custom_colors/current_line_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+highlight_all_occurrences = true
+smooth_scrolling = true
+caret_blink = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bottom" type="Control" parent="Layout/Right"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -200.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Navbar" type="ColorRect" parent="Layout/Right/Bottom"]
+anchor_right = 1.0
+margin_bottom = 35.0
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Navbar" type="ScrollContainer" parent="Layout/Right/Bottom/Navbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Horizontal" type="HBoxContainer" parent="Layout/Right/Bottom/Navbar/Navbar"]
+margin_right = 52.0
+margin_bottom = 25.0
+custom_constants/separation = 2
+
+[node name="Run" type="Button" parent="Layout/Right/Bottom/Navbar/Navbar/Horizontal"]
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 25 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+
+[node name="Icon" type="TextureRect" parent="Layout/Right/Bottom/Navbar/Navbar/Horizontal/Run"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stop" type="Button" parent="Layout/Right/Bottom/Navbar/Navbar/Horizontal"]
+margin_left = 27.0
+margin_right = 52.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 25 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+
+[node name="Icon" type="TextureRect" parent="Layout/Right/Bottom/Navbar/Navbar/Horizontal/Stop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Console" type="RichTextLabel" parent="Layout/Right/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 35.0
+margin_right = -15.0
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 2 )
+custom_fonts/bold_font = ExtResource( 7 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+custom_effects = [ SubResource( 8 ) ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider" type="Button" parent="Layout/Right"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -212.0
+margin_bottom = -200.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider" type="Button" parent="Layout"]
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_right = 212.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MultiSlider" type="Button" parent="Layout/Slider"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -212.0
+margin_bottom = -200.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="Layout/Right/Top/TextArea" to="Layout/Right/Top/TextArea" method="_textAreaEdited"]
+[connection signal="pressed" from="Layout/Right/Bottom/Navbar/Navbar/Horizontal/Run" to="." method="console_run"]
+[connection signal="button_down" from="Layout/Right/Slider" to="Layout" method="updownslider_down"]
+[connection signal="button_up" from="Layout/Right/Slider" to="Layout" method="updownslider_up"]
+[connection signal="button_down" from="Layout/Slider" to="Layout" method="leftrightslider_down"]
+[connection signal="button_up" from="Layout/Slider" to="Layout" method="leftrightslider_up"]
+[connection signal="button_down" from="Layout/Slider/MultiSlider" to="Layout" method="multislider_down"]
+[connection signal="button_up" from="Layout/Slider/MultiSlider" to="Layout" method="multislider_up"]
